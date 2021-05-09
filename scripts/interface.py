@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # license removed for brevity
 import rospy
-from fish_respirometry_system import menuData
+from fish_respirometry_system.msg import menuData
 
 def talker():
     pub = rospy.Publisher('chatter', String, queue_size=10)

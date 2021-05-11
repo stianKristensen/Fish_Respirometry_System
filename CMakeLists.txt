@@ -52,6 +52,7 @@ add_message_files(
   FILES
   interfaceData.msg
   operationStatus.msg
+  oxygenMeterData.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -164,6 +165,7 @@ catkin_install_python(PROGRAMS
   scripts/interface.py
   scripts/cameraControl.py
   scripts/operationControl.py
+  scripts/oxygenMeter.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

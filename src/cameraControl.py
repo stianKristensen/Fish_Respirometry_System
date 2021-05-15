@@ -98,7 +98,14 @@ def show_camera():
         print 'Unable to open camera'
 
 if __name__ == '__main__':
+        # Tries to start image publisher if roscore is properly running
     try:
-        show_camera()
+        # Initialize nodes
+        rospy.init_node('jetbotCamera')
+        rate = rospy.Rate(10)
+        while not rospy.is_shutdown():
+            show_camera()
+            # Sleep remaining time
+            rate.sleep()
     except rospy.ROSInterruptException:
         pass

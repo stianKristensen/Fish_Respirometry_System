@@ -10,7 +10,6 @@ project(fish_respirometry_system)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
-  cv_bridge
   std_msgs
   message_generation
 )
@@ -108,7 +107,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES fish_respirometry_system
- CATKIN_DEPENDS roscpp rospy cv_bridge std_msgs
+ CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 

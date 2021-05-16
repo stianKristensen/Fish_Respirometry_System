@@ -1,6 +1,6 @@
 <launch>
     <!-- <node name="Interface" pkg="fish_respirometry_system" type="interface.py" output="screen"/> -->
-    <node name="CameraControl" pkg="fish_respirometry_system" type="CameraControl.py" output="screen"/>
+    <node name="cameraControl" pkg="fish_respirometry_system" type="CameraControl.py" output="screen"/>
     <!-- <node name="MainController" pkg="fish_respirometry_system" type="MainController.py" output="screen"/> -->
     <!-- <node name="OperationControl" pkg="fish_respirometry_system" type="operationControl.py" output="screen"/> -->
     <!-- <node name="OxygenMeter" pkg="fish_respirometry_system" type="oxygenMeter.py" output="screen"/> -->

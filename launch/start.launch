@@ -4,5 +4,4 @@
     <!-- <node name="MainController" pkg="fish_respirometry_system" type="MainController.py" output="screen"/> -->
     <!-- <node name="OperationControl" pkg="fish_respirometry_system" type="operationControl.py" output="screen"/> -->
     <!-- <node name="OxygenMeter" pkg="fish_respirometry_system" type="oxygenMeter.py" output="screen"/> -->
-</node>
 </launch>

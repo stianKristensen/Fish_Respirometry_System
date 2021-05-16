@@ -102,10 +102,9 @@ if __name__ == '__main__':
     try:
         # Initialize nodes
         rospy.init_node('cameraControl')
-        rate = rospy.Rate(10)
+        
         while not rospy.is_shutdown():
             show_camera()
-            # Sleep remaining time
-            rate.sleep()
+            
     except rospy.ROSInterruptException:
         pass

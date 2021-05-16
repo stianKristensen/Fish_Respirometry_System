@@ -8,7 +8,6 @@ project(fish_respirometry_system)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
   rospy
   std_msgs
   message_generation
@@ -48,12 +47,12 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-  FILES
-  # interfaceData.msg
-  # operationStatus.msg
-  # oxygenMeterData.msg
-)
+# add_message_files(
+#   FILES
+#   # interfaceData.msg
+#   # operationStatus.msg
+#   # oxygenMeterData.msg
+# )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -107,7 +106,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES fish_respirometry_system
- CATKIN_DEPENDS roscpp rospy std_msgs
+ CATKIN_DEPENDS rospy std_msgs
 #  DEPENDS system_lib
 )
 

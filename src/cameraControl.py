@@ -101,7 +101,7 @@ if __name__ == '__main__':
         # Tries to start image publisher if roscore is properly running
     try:
         # Initialize nodes
-        rospy.init_node('jetbotCamera')
+        rospy.init_node('CameraControl')
         rate = rospy.Rate(10)
         while not rospy.is_shutdown():
             show_camera()

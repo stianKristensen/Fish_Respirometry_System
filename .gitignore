@@ -132,3 +132,4 @@ dmypy.json
 *.pyc
 
 EncoderTest.ino
+config.ini

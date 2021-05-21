@@ -67,11 +67,6 @@ void setup() {
   impeller.CW();
   impellerRPM_setpoint = 1000;
   impellerPID.SetMode(AUTOMATIC);
-
-  impellerPID.Compute();
-  impellerPWM = constrain(impellerPWM, 0, 255);
-  impeller.DRIVE(impellerPWM);
-  
 }
 
 void loop() {

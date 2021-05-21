@@ -25,9 +25,15 @@ config = configparser.ConfigParser()
 
 if os.path.exists('config.ini') == False:
     config['Procedure Settings'] = {
-        'start_flow_velocity': '0.5',
-        'end_flow_velocity': '20',
-        'flow_velocity_stepsize': '0.5'
+        'start_flow_velocity_[cm/s]': '0.5',
+        'end_flow_velocity_[cm/s]': '20',
+        'flow_velocity_stepsize_[cm/s]': '0.5'
+        }
+    
+    config['System Values'] = {
+        'min_flow_velocity_[cm/s]': '0.5',
+        'max_flow_velocity_[cm/s]': '20',
+        'volume_[ml]': 'tbd'
         }
 
     with open('config.ini', 'w') as configfile:
@@ -44,14 +50,14 @@ def test_settings():
     label_startFlow = tk.Label(master=testSettingsWindow, text="Starting Flow Velocity [cm/s]")
     label_startFlow.grid(row=0, column=0)
     entry_startFlow = tk.Entry(master=testSettingsWindow, width=5, exportselection=0)
-    entry_startFlow.insert(END, config['Procedure Settings']['start_flow_velocity'])
+    entry_startFlow.insert(END, config['Procedure Settings']['start_flow_velocity_[cm/s]'])
     entry_startFlow.grid(row=0, column=1)
 
     # End flow velocity
     label_endFlow = tk.Label(master=testSettingsWindow, text="End Flow Velocity [cm/s]")
     label_endFlow.grid(row=1, column=0)
     entry_endFlow = tk.Entry(master=testSettingsWindow, width=5, exportselection=0)
-    entry_endFlow.insert(END, config['Procedure Settings']['end_flow_velocity'])
+    entry_endFlow.insert(END, config['Procedure Settings']['end_flow_velocity_[cm/s]'])
     entry_endFlow.grid(row=1, column=1)
 
         
@@ -65,9 +71,9 @@ def test_settings():
 # Update procedure settings values when called
 def save_procedureSettings(config, startFlow, endFlow):
     config['Procedure Settings'] = {
-    'start_flow_velocity': startFlow,
-    'end_flow_velocity': endFlow,
-    'flow_velocity_stepsize': '0.5'
+    'start_flow_velocity_[cm/s]': startFlow,
+    'end_flow_velocity_[cm/s]': endFlow,
+    'flow_velocity_stepsize_[cm/s]': '0.5'
     }
     with open('config.ini', 'w') as configfile:
         config.write(configfile)

@@ -55,18 +55,32 @@ unsigned long timeElapsed = 0;
 unsigned long timeOld = millis();
 double impellerPWM = 0;
 double impellerRPM_setpoint = 0;
+int inletPumpPWM = 0;
+int outletPumpPWM = 0;
 
 Encoder impellerEnc(impellerEnc_C1,impellerEnc_C2);
 MotorControl impeller(impeller_I1, impeller_I2, impeller_PWM);
 PID impellerPID(&impellerRPM, &impellerPWM, &impellerRPM_setpoint, impeller_Kp, impeller_Ki, impeller_Kd, P_ON_M, DIRECT);
+MotorControl outletPump(pump1_I1, pump1_I2, pump1_PWM);
+MotorControl inletPump(pump2_I1, pump2_I2, pump2_PWM);
+
 
 void setup() {
   Serial.begin(9600);
   impellerEnc.write(0);
   digitalWrite(standbyPin, HIGH);
-  impeller.CW();
-  impellerRPM_setpoint = 1000;
+  impeller.CW(); //CW is positive
+  impellerRPM_setpoint = 0;
   impellerPID.SetMode(AUTOMATIC);
+
+  inletPumpPWM = 100; //0 to 255, 100 is nice and slow
+  inletPump.CW(); //CW = pump out, CCW = pump in
+  inletPump.DRIVE(inletPumpPWM);
+  outletPump.CW(); //CW = pump out, CCW = pump in
+  outletPumpPWM = constrain((inletPumpPWM*1.2), 0, 255);
+  outletPump.DRIVE(100);
+
+ 
 }
 
 void loop() {
@@ -91,9 +105,9 @@ void loop() {
     Serial.print("Impeller RPM = ");
     Serial.print(impellerRPM);
     Serial.println();
-    //Serial.print("Impeller PWM = ");
-    //Serial.print(impellerPWM);
-    //Serial.println();
+    Serial.print("Impeller PWM = ");
+    Serial.print(impellerPWM);
+    Serial.println();
     oldImpellerRPM = impellerRPM;
   }
   

@@ -98,7 +98,7 @@ def show_camera():
         print 'Unable to open camera'
 
 if __name__ == '__main__':
-        # Tries to start image publisher if roscore is properly running
+        # Tries to initialize node if roscore is properly running
     try:
         # Initialize nodes
         rospy.init_node('cameraControl')

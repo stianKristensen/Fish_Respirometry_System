@@ -27,13 +27,24 @@ if os.path.exists('config.ini') == False:
     config['Procedure Settings'] = {
         'start_flow_velocity_[cm/s]': '0.5',
         'end_flow_velocity_[cm/s]': '20',
-        'flow_velocity_stepsize_[cm/s]': '0.5'
+        'flow_velocity_stepsize_[cm/s]': '0.5',
+        'test_time_[min]': '20',
+        'flush_time_[min]': '10',
+        'flush_pump_strength_[0-255]': '100'
+        }
+
+    config['Maintenace'] = {
+        'fill_time_[min]': '2',
+        'flush_time_[min]': '5',
+        'clean_time_[min]': '15',
+        'drain_time_[min]': '3',
+        'pump_strength_[0-255]': '100'
         }
     
     config['System Values'] = {
         'min_flow_velocity_[cm/s]': '0.5',
         'max_flow_velocity_[cm/s]': '20',
-        'volume_[ml]': 'tbd'
+        'total_volume_[ml]': '40.8'
         }
 
     with open('config.ini', 'w') as configfile:
@@ -73,7 +84,10 @@ def save_procedureSettings(config, startFlow, endFlow):
     config['Procedure Settings'] = {
     'start_flow_velocity_[cm/s]': startFlow,
     'end_flow_velocity_[cm/s]': endFlow,
-    'flow_velocity_stepsize_[cm/s]': '0.5'
+    'flow_velocity_stepsize_[cm/s]': '0.5',
+    'test_time_[min]': '20',
+    'flush_time_[min]': '10',
+    'flush_pump_strength_[0-255]': '100'
     }
     with open('config.ini', 'w') as configfile:
         config.write(configfile)

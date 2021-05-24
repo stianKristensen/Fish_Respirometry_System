@@ -33,7 +33,7 @@ if os.path.exists('config.ini') == False:
         'flush_pump_strength_[0-255]': '100'
         }
 
-    config['Maintenace'] = {
+    config['Maintenance'] = {
         'fill_time_[min]': '2',
         'flush_time_[min]': '5',
         'clean_time_[min]': '15',

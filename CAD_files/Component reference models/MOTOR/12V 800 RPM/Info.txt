@@ -1,0 +1,25 @@
+Name: uxcell Gear Motor with Encoder DC 12V 800RPM Gear Ratio 6.25:1 D Shaft Metal Encoder Gear Motor Silver 37Dx49L mm for Robot RC Model DIY Engine
+
+Info:
+
+Specifications:
+Material: Metal
+Color: Silver
+Rated Voltage: 12V
+Voltage Range: 6-24V
+No-load Speed: 800RPM
+Load Speed: 640RPM
+No-load Current: 45mA
+Torque: 0.5kg.cm
+Reduction Ratio: 6.25:1
+Gearbox Size(D*L): 37x19mm/1.46x0.75inch
+Motor Size(D*L): 34.5x30mm/1.36x1.18inch
+Shaft Size(D*L): 6x15.5mm/0.24x0.61inch
+Encoder Cable Length: 20cm/7.87inch
+Gross Weight: Approx. 190g
+
+Features:
+The encoder has 6 color-coded, 7.87" (20 cm) leads terminated by a 6 female header with a 0.1" pitch.
+The A and B outputs of the hall sensor are square waves from 0 V to Vcc approximately 90° out of phase.
+The face plate has 6 mounting holes evenly spaced around the outer edge threaded for M3 screws;
+These mounting holes form a regular hexagon and the centers of neighboring holes are 15.5 mm apart.

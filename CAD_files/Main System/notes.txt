@@ -1,0 +1,3 @@
+Connectors in cables to allow for easy dissasembly
+jetson-camera assembly is inserted into the watertunnel-motor-pump-electric assembly so that it can be easily and quickly removed when inserting/removing fish
+while still making it stable and centered during operation

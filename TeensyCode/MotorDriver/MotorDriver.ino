@@ -69,21 +69,25 @@ void setup() {
   Serial.begin(9600);
   impellerEnc.write(0);
   digitalWrite(standbyPin, HIGH);
+  
   impeller.CW(); //CW is positive
   impellerRPM_setpoint = 0;
+  
   impellerPID.SetMode(AUTOMATIC);
 
   inletPumpPWM = 100; //0 to 255, 100 is nice and slow
   inletPump.CW(); //CW = pump out, CCW = pump in
   inletPump.DRIVE(inletPumpPWM);
+
+  outletPumpPWM = 120;
   outletPump.CW(); //CW = pump out, CCW = pump in
-  outletPumpPWM = constrain((inletPumpPWM*1.2), 0, 255);
-  outletPump.DRIVE(100);
+  outletPump.DRIVE(outletPumpPWM);
 
  
 }
 
-void loop() {
+void loop() { 
+  
   // ----PID----
   impellerPID.Compute();
   impellerPWM = constrain(impellerPWM, 0, 255);
